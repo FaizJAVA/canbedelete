@@ -8,6 +8,14 @@ exports.SignUp=(request,response)=>{
         return response.status(201).json(result);
     }).catch(err=>{
         console.log(err);
-        return response.status(500).json({error:'not saved'});
+        return response.status(500).json({error:err});
+    });
+}
+exports.View=(request,response)=>{
+    userM.find().then(result=>{
+        return response.status(200).json(result);
+    }).catch(err=>{
+        console.log(err);
+        return response.status(500).json({error:err});
     });
 }
