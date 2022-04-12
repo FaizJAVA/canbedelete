@@ -14,5 +14,6 @@ const storage=multer.diskStorage({
 const upload=multer({storage:storage});
 
 userRouter.post('/signup',upload.single('images'),userControl.SignUp);
+userRouter.get('/view',userControl.View);
 
 module.exports=userRouter;
